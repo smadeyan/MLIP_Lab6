@@ -12,17 +12,18 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh !/bin/bash
+                sh '''!/bin/bash
                 echo 'Test Step: We run testing tool like pytest here'
 
-                //# TODO fill out the path to conda here
+                # TODO fill out the path to conda here
                 sudo /home/team10/miniconda3/bin/conda init
 
-                //# TODO Complete the command to run pytest
+                # TODO Complete the command to run pytest
                 sudo /home/team10/miniconda3/bin/conda run -n mlip pytest
 
                 echo 'pytest ran'
-                //# exit 1 #comment this line after implementing Jenkinsfile
+                # exit 1 #comment this line after implementing Jenkinsfile
+                '''
                 
 
             }
